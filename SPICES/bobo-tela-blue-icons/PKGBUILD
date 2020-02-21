@@ -1,0 +1,24 @@
+# Maintainer: Erik Dubois <erik.dubois@gmail.com>
+pkgname=bobo-tela-blue-icons
+_destname1="/usr"
+_destname2="/etc"
+_destname3="/etc"
+_destname4="/etc"
+pkgver=20.2.21
+pkgrel=1
+pkgdesc="Tela Blue icons "
+arch=('any')
+url="https://github.com/PeterDauwe"
+license=('GPL3')
+makedepends=('git')
+depends=()
+conflicts=('bobo-tela-blue-icons-git')
+replaces=('bobo-tela-blue-icons-git')
+provides=("${pkgname}")
+options=(!strip !emptydirs)
+source=(${pkgname}::"git+${url}/${pkgname}")
+sha256sums=('SKIP')
+package() {
+	install -dm755 ${pkgdir}${_destname1}
+	cp -r ${srcdir}/${pkgname}${_destname1}/* ${pkgdir}${_destname1}
+}

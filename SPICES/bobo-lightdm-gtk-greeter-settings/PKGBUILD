@@ -1,0 +1,29 @@
+# Maintainer: Erik Dubois <erik.dubois@gmail.com>
+pkgname=bobo-lightdm-gtk-greeter-settings
+_destname1="/etc/"
+_destname2="/usr"
+pkgver=20.2.21
+pkgrel=3
+pkgdesc="Installation files for ArcoLinux Bobo Variation"
+arch=('any')
+url="https://github.com/PeterDauwe"
+license=('Attribution-NonCommercial-ShareAlike 4.0 International Public License')
+makedepends=('git')
+options=(!strip !emptydirs)
+replaces=('bobo-lightdm-gtk-greeter-git')
+backup=('etc/lightdm/lightdm-gtk-greeter.conf')
+depend=('gtk3')
+depend=('lightdm')
+conflicts=('bobo-lightdm-gtk-greeter-git')
+makedepend=('exo')
+makedepend=('gobject-introspection')
+makedepend=('intltool')
+source=(${pkgname}::"git+${url}/${pkgname}")
+sha256sums=('SKIP')
+package() {
+  install -dm755 "$pkgdir$_destname1"
+  cp -r "$srcdir/$pkgname/$_destname1/"* "$pkgdir$_destname1"
+
+  install -dm755 "$pkgdir$_destname2"
+  cp -r "$srcdir/$pkgname/$_destname2/"* "$pkgdir$_destname2"
+}
