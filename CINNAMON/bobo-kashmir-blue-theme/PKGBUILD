@@ -1,19 +1,19 @@
 # Maintainer: Erik Dubois <erik.dubois@gmail.com>
-pkgname=bobo-root
-_destname1="/etc"
+pkgname=bobo-kashmir-blue-theme
+_destname1="/usr"
 _destname2="/etc"
 _destname3="/etc"
 _destname4="/etc"
-pkgver=20.2.23
-pkgrel=2
-pkgdesc="Root bashrc etc..."
+pkgver=20.2.22
+pkgrel=1
+pkgdesc="bobo-kashmir-blue-theme"
 arch=('any')
 url="https://github.com/PeterDauwe"
 license=('GPL3')
 makedepends=('git')
 depends=()
-conflicts=('bobo-root-git')
-replaces=('bobo-root-git')
+conflicts=()
+replaces=()
 provides=("${pkgname}")
 options=(!strip !emptydirs)
 source=(${pkgname}::"git+${url}/${pkgname}")
